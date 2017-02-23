@@ -21,7 +21,7 @@ def parse(filename):
             Ld, K = map(int, lines[i+2+lc].split())
             cache_latencies = []
             for k in range(K):
-                cache_latencies.append(tuple(map(int, lines[i+2+lc].split())))
+                cache_latencies.append(tuple(map(int, lines[i+3+lc].split())))
                 lc+=1
             cachess = {cache_id: latency_to_endpoint for cache_id, latency_to_endpoint in cache_latencies}
 

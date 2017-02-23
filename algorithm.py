@@ -15,14 +15,14 @@ def run_that_beast(problem):
     videos = problem['videos']
     caches = problem['caches']
 
-    print caches
+    # print caches
 
     while requests:
         print 'Nice infinite loop'
         sorted_requests = sort_requests(requests, endpoints, caches, videos)
         current_request = sorted_requests.pop(0)
 
-        handle_request()
+        handle_request(current_request, endpoints, caches, videos)
 
         if are_all_caches_full(caches):
             break
