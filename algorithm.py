@@ -15,6 +15,8 @@ def run_that_beast(problem):
     videos = problem['videos']
     caches = problem['caches']
 
+    print caches
+
     while requests:
         print 'Nice infinite loop'
         sorted_requests = sort_requests(requests, endpoints, caches, videos)

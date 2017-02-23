@@ -23,13 +23,15 @@ def parse(filename):
             for k in range(K):
                 cache_latencies.append(tuple(map(int, lines[i+2+lc].split())))
                 lc+=1
-            caches = {cache_id: latency_to_endpoint for cache_id, latency_to_endpoint in cache_latencies}
+            cachess = {cache_id: latency_to_endpoint for cache_id, latency_to_endpoint in cache_latencies}
 
-            endpoints[i] = make_endpoint(i, Ld, caches)
+            endpoints[i] = make_endpoint(i, Ld, cachess)
 
         for i in range(R):
             v, e, n = map(int, lines[i+E+lc+2].split())
             requests.append(make_request(n, v, e))
+
+        caches = {id : make_cache(id, X) for  id in range(0, X)}
 
     return {
         'V': V,
