@@ -39,5 +39,6 @@ def parse(filename):
         'X': X,
         'videos': videos,
         'endpoints': endpoints,
-        'requests': requests
+        'requests': requests,
+        'caches': caches
     }

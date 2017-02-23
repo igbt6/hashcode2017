@@ -1,4 +1,4 @@
-""""
+
 test_cache_data = {
     0: {
         'video_ids': [1, 2, 3, 4, 5],
@@ -17,7 +17,7 @@ test_cache_data = {
         'current_capacity': 10
     },
 }
-""""
+
 
 def stringify(caches, file_name):
     caches_with_videos = {
@@ -31,7 +31,7 @@ def stringify(caches, file_name):
             str(video_id) for video_id in cache.get('video_ids', [])
         ])
         cache_line = '%d %s\n' % (
-            cache_id, 
+            cache_id,
             video_ids
         )
         output_string += cache_line
